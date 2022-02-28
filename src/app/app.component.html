@@ -1,0 +1,71 @@
+<body>
+  <div class="wrapper">
+    <section class="stanga">
+      <h1>Learn to code by <br> watching others</h1>
+      <p><b>See how experienced developers solve problems in real-time.<br>
+          Watching scripted tutorials is great, but understanding how <br> developers think is invaluable.</b></p>
+    </section>
+
+    <section class="dreapta">
+      <div class="butonsus">
+        <span><b>Try it free 7 days</b> then $20/mo. thereafter</span>
+      </div>
+      <div class="formular">
+        <form class="formular" [formGroup]="form">
+
+          <mat-form-field appearence="fill" class="upper-field">
+            <input matInput type="text" formControlName="firstName" class="first_name" placeholder="First Name"
+              required>
+          </mat-form-field>
+          <div
+            *ngIf="form.controls['firstName'].invalid && (form.controls['firstName'].dirty || form.controls['firstName'].touched)"
+            class="alert">
+            <div *ngIf="form.controls['firstName'].errors?.['required']">
+              <img src="assets/images/icon-error.svg"> First Name cannot be empty
+            </div>
+          </div>
+
+          <mat-form-field appearence="fill">
+            <input matInput type="text" formControlName="lastName" class="last_name" placeholder="Last Name" required>
+          </mat-form-field>
+          <div
+            *ngIf="form.controls['lastName'].invalid && (form.controls['lastName'].dirty || form.controls['lastName'].touched)"
+            class="alert">
+            <div *ngIf="form.controls['lastName'].errors?.['required']">
+              <img src="assets/images/icon-error.svg"> Last Name cannot be empty
+            </div>
+          </div>
+
+          <mat-form-field appearence="fill">
+            <input matInput type="email" formControlName="email" class="email" placeholder="Email" required>
+          </mat-form-field>
+          <div
+            *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)"
+            class="alert">
+            <div *ngIf="form.controls['email'].errors?.['required']">
+              <img src="assets/images/icon-error.svg"> Email cannot be empty
+            </div>
+          </div>
+
+          <mat-form-field appearence="fill">
+            <input matInput type="password" formControlName="password" class="password" placeholder="Password" required>
+          </mat-form-field>
+          <div
+            *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)"
+            class="alert">
+            <div *ngIf="form.controls['password'].errors?.['required']">
+              <img src="assets/images/icon-error.svg"> Password cannot be empty
+            </div>
+          </div>
+
+          <button mat-raised-button class="buton" type="submit" (click)="login()">Claim your free trial</button>
+          <p>By clicking the button, you are agreeing to our <span><b>Terms and Services</b></span></p>
+        </form>
+      </div>
+    </section>
+  </div>
+  <!-- <footer>
+  Challenge by <a href="https://www.frontendmentor.io/home" target="_blank">Frontend Mentor</a>. Coded by <a href="https://www.instagram.com/ovidiumovila/" target="_blank">Movila Ovidiu</a> .
+</footer> -->
+
+</body>
